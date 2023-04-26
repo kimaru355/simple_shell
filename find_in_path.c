@@ -67,7 +67,7 @@ char **__tokenize_path(data_of_program *data)
 	/* get the PATH value*/
 	PATH = _env_get_key("PATH", data);
 	if ((PATH == NULL) || PATH[0] == '\0')
-	{/path not found/
+	{/*path not found*/
 		return (NULL);
 	}
 
@@ -83,7 +83,7 @@ char **__tokenize_path(data_of_program *data)
 	/* reserve space for the array of pointers */
 	tokens = malloc(sizeof(char *) * counter_directories);
 
-	/_tokenize and duplicate each token of path/
+	/*_tokenize and duplicate each token of path*/
 	i = 0;
 	tokens[i] = _str_duplicate(_strtok(PATH, ":"));
 	while (tokens[i++])
@@ -117,7 +117,8 @@ int _check_file(char *full_path)
 		}
 		return (0);
 	}
-	/if not exist the file/
+	/*if not exist the file*/
 	errno = 127;
 	return (127);
 }
+
