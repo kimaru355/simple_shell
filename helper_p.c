@@ -52,11 +52,7 @@ int _print_error(int errorcode, data_of_program *data)
 	else if (errorcode == 127)
 	{
 		_printe(data->program_name);
-		_printe(": ");
-		_printe(num_string);
-		_printe(": ");
-		_printe(data->command_name);
-		_printe(": not found\n");
+		_printe(": No such file or directory\n");
 	}
 	else if (errorcode == 126)
 	{

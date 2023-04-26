@@ -34,12 +34,12 @@ int _get_line(data_of_program *data)
 		i = 0;
 		do {
 			array_of_commands[i] = _str_duplicate(_strtok(i ? NULL : buffer, "\n;"));
-			/checks and split for && and || operators/
+			/*checks and split for && and || operators*/
 			i = _check_logic_ops(array_of_commands, i, array_operators);
 		} while (array_of_commands[i++]);
 	}
 
-	/obtains the next command (command 0) and remove it for the array/
+	/*obtains the next command (command 0) and remove it for the array*/
 	data->input_line = array_of_commands[0];
 	for (i = 0; array_of_commands[i]; i++)
 	{
@@ -94,3 +94,4 @@ int _check_logic_ops(char *array_commands[], int i, char array_operators[])
 	}
 	return (i);
 }
+
